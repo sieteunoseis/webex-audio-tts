@@ -1,0 +1,23 @@
+services:
+  frontend:
+    build:
+      context: ./frontend # Path to the front Dockerfile
+    ports:
+      - "3000:80" # Map port 3000 on host to port 80 in container
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend # Path to the backend Dockerfile
+    expose:
+      - "5000"
+    user: "${UID:-1000}:${GID:-1000}"  # Use host user's UID/GID
+    networks:
+      - app-network
+    env_file:
+      - .env
+
+networks:
+  app-network:
+    driver: bridge
