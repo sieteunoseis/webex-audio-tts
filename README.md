@@ -154,11 +154,80 @@ Note: that the data directory will be used to store the audio files and the db d
 ## Project Structure
 
 ```
-src/
-├── components/         # Reusable UI components
-├── pages/             # Page components
-├── theme-provider.tsx # Theme configuration
-└── App.jsx           # Main application component
+webex-audio-tts
+├─ README.md
+├─ backend
+│  ├─ .dockerignore
+│  ├─ Dockerfile
+│  ├─ data
+│  ├─ package-lock.json
+│  ├─ package.json
+│  └─ server.js
+├─ docker-compose.yaml
+├─ frontend
+│  ├─ .dockerignore
+│  ├─ Dockerfile
+│  ├─ README.md
+│  ├─ components.json
+│  ├─ config.js
+│  ├─ eslint.config.js
+│  ├─ generate-config.sh
+│  ├─ index.html
+│  ├─ nginx.conf
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ postcss.config.js
+│  ├─ public
+│  │  └─ favicon.ico
+│  ├─ src
+│  │  ├─ App.jsx
+│  │  ├─ components
+│  │  │  ├─ BackgroundLogo.jsx
+│  │  │  ├─ NavBar.jsx
+│  │  │  ├─ WebexTTSForm.jsx
+│  │  │  ├─ mode-toggle.tsx
+│  │  │  ├─ theme-context.tsx
+│  │  │  ├─ theme-provider.tsx
+│  │  │  └─ ui
+│  │  │     ├─ button.tsx
+│  │  │     ├─ card.tsx
+│  │  │     ├─ dialog.tsx
+│  │  │     ├─ dropdown-menu.tsx
+│  │  │     ├─ input.tsx
+│  │  │     ├─ navigation-menu.tsx
+│  │  │     ├─ select.tsx
+│  │  │     ├─ textarea.tsx
+│  │  │     ├─ toast.tsx
+│  │  │     └─ toaster.tsx
+│  │  ├─ config
+│  │  │  └─ ConfigContext.jsx
+│  │  ├─ hooks
+│  │  │  └─ use-toast.ts
+│  │  ├─ index.css
+│  │  ├─ lib
+│  │  │  ├─ select-styles.js
+│  │  │  └─ utils.ts
+│  │  ├─ main.jsx
+│  │  ├─ pages
+│  │  │  ├─ Error.jsx
+│  │  │  └─ Home.jsx
+│  │  └─ vite-env.d.ts
+│  ├─ tailwind.config.cjs
+│  ├─ tsconfig.app.json
+│  ├─ tsconfig.json
+│  ├─ tsconfig.node.json
+│  └─ vite.config.ts
+├─ package-lock.json
+├─ package.json
+├─ screenshots
+│  ├─ app_home_logged_in.png
+│  ├─ app_home_login.png
+│  ├─ webex_calling_announcements.png
+│  ├─ webex_calling_features.png
+│  └─ webex_developer_app.png
+└─ scripts
+   └─ git-template-remote.sh
+
 ```
 
 ## Contributing
@@ -174,6 +243,22 @@ src/
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Screenshots
+
+### Application Home Page
+![Application Home Page](https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/main/screenshots/app_home_login.png)
+
+### Application Home Page (Logged In)
+![Application Home Page](https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/main/screenshots/app_home_logged_in.png)
+
+### Webex Developer App
+![Webex Developer App](https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/main/screenshots/webex_developer_app.png)
+
+### Webex Calling Features - Announcements
+
+Found on Control Hub > Calling > Features > Announcements > Manage
+
+![Webex Calling Features](https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/main/screenshots/webex_calling_features.png)
+![Webex Calling Announcements](https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/main/screenshots/webex_calling_announcements.png)
 
 ## Troubleshooting
 
