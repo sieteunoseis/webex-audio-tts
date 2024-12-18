@@ -4,13 +4,16 @@ FROM node:20-alpine
 # Add non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
+# Install ffmpeg using Alpine package manager
+RUN apk add --no-cache ffmpeg
+
 # Create app directory and set ownership
 WORKDIR /usr/src/app
 
 # Create directories as root and set ownership immediately
-RUN mkdir -p /usr/src/app/db /usr/src/app/data && \
+RUN mkdir -p /usr/src/app/data && \
     chown -R appuser:appgroup /usr/src/app && \
-    chmod 755 /usr/src/app/db /usr/src/app/data
+    chmod 755 /usr/src/app/data
 
 # Copy package files
 COPY --chown=appuser:appgroup package*.json ./
