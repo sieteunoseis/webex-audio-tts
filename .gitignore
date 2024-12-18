@@ -11,3 +11,6 @@ backend.env
 frontend.env
 .env.local
 .env
+backend/temp/*.wav
+
+.git

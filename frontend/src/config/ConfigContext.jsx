@@ -6,18 +6,22 @@ const getConfigValues = () => {
   // Development environment
   if (import.meta.env.DEV) {
     const config = {
+      webexClientId: import.meta.env.VITE_WEBEX_CLIENT_ID || "",
+      webexRedirectUri: import.meta.env.VITE_WEBEX_REDIRECT_URI || "",
+      webexScope: import.meta.env.VITE_WEBEX_SCOPE || "",
       brandingUrl: import.meta.env.VITE_BRANDING_URL || "https://automate.builders",
       brandingName: import.meta.env.VITE_BRANDING_NAME || "Automate Builders",
-      tableColumns: import.meta.env.VITE_TABLE_COLUMNS || "name,hostname,username,password,version",
     };
     return config;
   }
 
   // Production environment
   const config = {
+    webexClientId: window.APP_CONFIG?.WEBEX_CLIENT_ID || "",
+    webexRedirectUri: window.APP_CONFIG?.WEBEX_REDIRECT_URI || "",
+    webexScope: window.APP_CONFIG?.WEBEX_SCOPE || "",
     brandingUrl: window.APP_CONFIG?.BRANDING_URL || "https://automate.builders",
     brandingName: window.APP_CONFIG?.BRANDING_NAME || "Automate Builders",
-    tableColumns: window.APP_CONFIG?.TABLE_COLUMNS || "name,hostname,username,password,version",
   };
   return config;
 };

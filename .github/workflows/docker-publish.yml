@@ -9,8 +9,8 @@ on:
 env:
   REGISTRY: ghcr.io
   # Change these to match your project name
-  FRONTEND_NAME: boilerplate-frontend
-  BACKEND_NAME: boilerplate-backend
+  FRONTEND_NAME: webex-tts-frontend
+  BACKEND_NAME: webex-tts-backend
   # GitHub automatically provides this variable
   OWNER: ${{ github.repository_owner }}
 

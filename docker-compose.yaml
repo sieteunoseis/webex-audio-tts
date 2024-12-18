@@ -1,23 +1,27 @@
 services:
-  frontend:
-    build:
-      context: ./frontend # Path to the front Dockerfile
+  webex-tts-frontend:
+    image: ghcr.io/sieteunoseis/webex-tts-frontend:master
+    container_name: webex-tts-frontend
     ports:
       - "3000:80" # Map port 3000 on host to port 80 in container
     networks:
-      - app-network
+      - webex-network
+    env_file:
+      - frontend.env
 
-  backend:
-    build:
-      context: ./backend # Path to the backend Dockerfile
+  webex-tts-backend:
+    image: ghcr.io/sieteunoseis/webex-tts-backend:master
+    container_name: webex-tts-backend
+    volumes:
+      - ./data:/usr/src/app/data
     expose:
       - "5000"
     user: "${UID:-1000}:${GID:-1000}"  # Use host user's UID/GID
     networks:
-      - app-network
+      - webex-network
     env_file:
-      - .env
+      - backend.env
 
 networks:
-  app-network:
+  webex-network:
     driver: bridge

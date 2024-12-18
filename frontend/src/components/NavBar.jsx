@@ -17,11 +17,6 @@ export default function Component() {
                 Home
               </Link>
             </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link to="/connections" className="mr-4">
-                Connections
-              </Link>
-            </NavigationMenuLink>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
