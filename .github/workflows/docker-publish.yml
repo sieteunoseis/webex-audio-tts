@@ -3,9 +3,9 @@ name: Build and Publish Docker Images
 on:
   workflow_dispatch:  # Add this line to enable manual triggers
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 env:
   REGISTRY: ghcr.io
