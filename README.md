@@ -74,7 +74,7 @@ The application will be available at `http://localhost:5173`
 
 1. Download docker-compose.yml file from this repository
 ```
-wget -O docker-compose.yaml https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/refs/heads/master/docker-compose.yaml
+wget -O docker-compose.yaml https://raw.githubusercontent.com/sieteunoseis/webex-audio-tts/refs/heads/main/docker-compose.yaml
 ```
 
 #### 2. Create a frontend.env file with the following content
